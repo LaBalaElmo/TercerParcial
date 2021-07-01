@@ -5,7 +5,7 @@ import java.util.Random;
 public class Turista implements ITurista {
 	private String nombre;
 	private int montoDinero;
-	private double monto = montoDinero;
+	private double monto;
 	private int ci;
 
 	public Turista(String nombre, int montoDinero, int ci) {
@@ -13,6 +13,7 @@ public class Turista implements ITurista {
 		this.nombre = nombre;
 		this.montoDinero = montoDinero;
 		this.ci = ci;
+		monto = montoDinero;
 	}
 
 	public String getNombre() {
@@ -41,11 +42,13 @@ public class Turista implements ITurista {
 
 	@Override
 	public void visit(LaPaz laPaz) {
-		int aux = new Random().nextInt(this.montoDinero);
+		int aux = new Random().nextInt(1000);
 		laPaz.setDineroPorTurismo(laPaz.getDineroPorTurismo() + aux);
 		System.out.println("El turista " + nombre + " esta visitanod " + laPaz.getNombre());
 		System.out.println(laPaz.getNombre() + " esta con un clima " + laPaz.getClima() + " y por eso el turista gasto " + aux);
 		System.out.println("Por su gasto ahora se tiene " + laPaz.getDineroPorTurismo() + " bolivianos en turismo");
+		monto = monto - aux;
+		System.out.println("Ahora el turista tiene " + monto);
 
 	}
 
@@ -56,6 +59,8 @@ public class Turista implements ITurista {
 		System.out.println("El turista " + nombre + " esta visitanod " + cochabamba.getNombre());
 		System.out.println(cochabamba.getNombre() + " esta con un clima " + cochabamba.getClima() + " y por eso el turista gasto " + aux);
 		System.out.println("Por su gasto ahora se tiene " + cochabamba.getDineroPorTurismo() + " bolivianos en turismo");
+		monto = monto - aux;
+		System.out.println("Ahora el turista tiene " + monto);
 	}
 
 	@Override
