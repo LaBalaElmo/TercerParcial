@@ -28,7 +28,8 @@ public class Facebook implements IRedSocial {
 
 	@Override
 	public void publicar(ISistema sistema) {
-		System.out.println("Capacidad de alumnos " + sistema.);
+		System.out.println("Capacidad de alumnos " + sistema.getCapacidad());
+		System.out.println("Los requisitos son " + sistema.getRequisitos());
 	}
 
 }
