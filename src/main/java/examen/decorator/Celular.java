@@ -1,6 +1,6 @@
 package examen.decorator;
 
-public class Celular implements ICelular{
+public class Celular implements ICelular {
 	private String marca;
 	private int ram;
 	private int almacenamiento;
@@ -50,6 +50,7 @@ public class Celular implements ICelular{
 	@Override
 	public void operation() {
 		System.out.println("Precio actual del celular " + marca + " es " + precio);
+		System.out.println("Con cpu de " + cpu + " y ram de " + ram);
 	}
 
 	public int getPrecio() {
